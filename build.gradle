@@ -1,22 +1,23 @@
 plugins {
     id 'java'
     id 'war'
+    id 'org.springframework.boot' version '2.7.18'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
 }
 
 group = 'com.example'
 version = '1.0'
+sourceCompatibility = '17'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    providedCompile 'javax.servlet:javax.servlet-api:4.0.1'
-    implementation 'org.apache.tomcat.embed:tomcat-embed-core:9.0.85'
-    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:9.0.85'
-    implementation 'org.apache.tomcat.embed:tomcat-embed-logging-juli:9.0.85'
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
 }
 
-war {
+bootWar {
     archiveFileName = 'app.war'
 }
