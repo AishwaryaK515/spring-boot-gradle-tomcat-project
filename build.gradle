@@ -22,4 +22,5 @@ dependencies {
 
 bootWar {
     archiveFileName = 'app.war'
+     mainClass = 'com.example.demo.DemoApplication' 
 }
